@@ -1365,37 +1365,54 @@ def getValidMoves(map, ii, jj):
             and map[i][j] != 1 and (map[i][j] != 3 or thisGame.ghostTimer > 80):
                 yield i, j
 
-# finding closest pellet
-def bfs(map):
+def bfs(map, goal=None):
     from collections import deque
+    start = (player.nearestRow, player.nearestCol)
     visited = set()
-    visited.add((player.nearestRow, player.nearestCol))
-    queue = deque([(player.nearestRow, player.nearestCol)])
+    visited.add(start)
+    queue = deque([start])
+    cameFrom = {start: None}
     while queue:
         i, j = queue.popleft()
-        if map[i][j] == 2: # found a pellet
-            return i, j
+        if (goal is None and map[i][j] == 2) or goal == (i, j): # found a pellet
+            return (i, j), cameFrom
         for ii, jj in getValidMoves(map, i, j):
             if (ii, jj) not in visited:
                 visited.add((ii, jj))
                 queue.append((ii, jj))
-    return None
+                cameFrom[(ii, jj)] = (i, j)
+    return None, None
+
+def dfs(map, goal):
+    start = (player.nearestRow, player.nearestCol)
+    visited = set()
+    stack = [start]
+    cameFrom = {start: None}
+    while stack:
+        i, j = stack.pop()
+        if (i, j) == goal:
+            return goal, cameFrom
+
+        for ii, jj in getValidMoves(map, i, j):
+            if (ii, jj) not in visited:
+                visited.add((ii, jj))
+                stack.append((ii, jj))
+                cameFrom[(ii, jj)] = (i, j)
+    return None, None
 
 def dist(i1, j1, i2, j2):
     return abs(i1 - i2) + abs(j1 - j2)
 
-# A-star algorithm
-def findPath(map, i, j):
+def aStar(map, goal):
     from heapq import heappush, heappop
     start = (player.nearestRow, player.nearestCol)
-    goal = (i, j)
     queue = [(0, start)]
     cameFrom = {start: None}
     cost = {start: 0}
     while queue:
         _, current = heappop(queue)
         if current == goal:
-            break
+            return current, cameFrom
         for move in getValidMoves(map, *current):
             new_cost = cost[current] + 1
             if move not in cost or new_cost < cost[move]:
@@ -1403,9 +1420,24 @@ def findPath(map, i, j):
                 priority = new_cost + dist(*move, *goal)
                 heappush(queue, (priority, move))
                 cameFrom[move] = current
-    if goal not in cameFrom:
-        return None
+    return None, None
+
+def findPath(map, i, j):
+    import os
+    if os.environ.get('PATHFINDER') == 'bfs':
+        algo = bfs
+    elif os.environ.get('PATHFINDER') == 'dfs':
+        # clutch to prevent being stuck
+        import random
+        if random.randint(0, 10) == 0:
+            random.shuffle(around)
+        algo = dfs
+    else:
+        algo = aStar
+    goal, cameFrom = algo(map, (i, j))
+    if cameFrom is None: return None
     path = []
+    start = (player.nearestRow, player.nearestCol)
     current = goal
     while current != start:
         path.append(current)
@@ -1414,7 +1446,7 @@ def findPath(map, i, j):
     return path
 
 def move(map):
-    goal = bfs(map)
+    goal, _ = bfs(map)
     if goal is not None:
         path = findPath(map, *goal)
         if path is not None:
