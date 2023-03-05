@@ -10,6 +10,12 @@ using Grid = std::array<std::array<bool, w>, h>;
 struct Coord {
     int x = 0;
     int y = 0;
+
+    Coord() = default;
+    Coord(int x, int y) {
+        this->x = x;
+        this->y = y;
+    }
 };
 
 struct Dimensions {

@@ -16,6 +16,16 @@ public:
     Coord pacman_position;
     std::array<Coord, n_ghosts> ghost_positions;
 
+    std::vector<Coord> getAvailableNeighbors(Coord pos) override {
+        std::vector<Coord> neighbors;
+        for (auto cell: this->getAllNeighbors(pos)) {
+            if (!this->isWall(cell)) {
+                neighbors.push_back(cell);
+            }
+        }
+        return neighbors;
+    }
+
 private:
     const int N_GHOSTS;
 

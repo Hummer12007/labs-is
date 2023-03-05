@@ -39,6 +39,7 @@ add_executable(Pacman
     game.cpp
     game.h
     abstract/gamestate.h
+    abstract/player.hpp
 )
 
 target_link_libraries(Pacman PRIVATE Qt5::Widgets)
