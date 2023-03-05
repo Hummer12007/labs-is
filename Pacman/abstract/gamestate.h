@@ -21,7 +21,7 @@ public:
         return walls[x][y];
     }
 
-    void getAvailableNeighbors(Coord pos) = 0;
+    virtual std::vector<Coord> getAvailableNeighbors(Coord pos) = 0;
 
 protected:
 

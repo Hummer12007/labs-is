@@ -19,7 +19,7 @@ public:
     std::vector<Coord> getAvailableNeighbors(Coord pos) override {
         std::vector<Coord> neighbors;
         for (auto cell: this->getAllNeighbors(pos)) {
-            if (!this->isWall(cell)) {
+            if (!this->isWall(cell.x, cell.y)) {
                 neighbors.push_back(cell);
             }
         }
