@@ -1,0 +1,42 @@
+Base predicates:
+
+gender_male()
+is_professor_working_with_ml()
+is_professor_working_with_quantum()
+is_demanding_professor()
+is_professor_less_than_forty()
+get_professor_department()
+is_lecturer()
+
+------------------------------------------------------------------------------------------------------------------------
+Producing new rules (R):
+1. is_professor_working_with_ml() -> gender_male()
+2. is_professor_working_with_quantum() -> gender_male()
+3. NOT is_demanding_professor() AND get_professor_department() == "MI" -> is_professor_less_than_forty()
+4. is_demanding_professor AND is_lecturer() AND is_professor_working_with_quantum() -> Ihor Zavadskiy
+5. is_demanding_professor AND is_lecturer() AND NOT is_professor_working_with_quantum() -> Iryna Verhunova
+6. NOT is_demanding_professor AND is_lecturer() AND gender_male() AND get_professor_department() == "TTP" -> Stepan Shkilniak
+7. NOT is_demanding_professor AND is_lecturer() AND NOT gender_male() AND get_professor_department() == "TTP" -> Liudmyla Omelchuk
+8. NOT is_demanding_professor AND is_lecturer() AND gender_male() AND get_professor_department() == "TC" -> Andrii Stavrovskiy
+9. NOT is_demanding_professor AND is_lecturer() AND NOT gender_male() AND get_professor_department() == "TC" -> Tetiana Karnaukh
+10. NOT is_demanding_professor AND is_lecturer() AND get_professor_department() == "MI" AND is_professor_less_than_forty() -> Bohdan Bobyl
+11. NOT is_demanding_professor AND NOT is_lecturer() AND is_professor_working_with_ml() -> Serhii Kondratiuk
+12. NOT is_demanding_professor AND NOT is_lecturer() AND NOT is_professor_working_with_ml() -> Nataliia Polishchuk
+------------------------------------------------------------------------------------------------------------------------
+
+# Procedures (P)
+# Decision Tree Traversal
+
+------------------------------------------------------------------------------------------------------------------------
+FACTS (F):
+
+1. Ihor Zavadskyi - is_professor_working_with_quantum()
+2. Iryna Verhunova - NOT is_professor_working_with_quantum()
+3. Stepan Shkilniak - gender_male()
+4. Luidmyla Omelchuk - NOT gender_male()
+5. Andrii Stavrovskyi - gender_male()
+6. Tetiana Karnaukh - NOT gender_male()
+7. Bohdan Bobyl - is_professor_less_than_forty()
+8. Serhii Kondratiuk - is_professor_working_with_ml() -> True
+10. Nataliia Polishchuk - is_professor_working_with_ml() -> False
+------------------------------------------------------------------------------------------------------------------------
