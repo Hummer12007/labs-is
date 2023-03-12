@@ -4,8 +4,27 @@
 #include <cassert>
 #include <array>
 
+
+enum class Tile {
+    Blank,
+    Wall,
+    Coin,
+    Player,
+    Ghost,
+    Cherry,
+};
+
+enum class Step {
+    N,
+    E,
+    S,
+    W,
+    None,
+};
+
+
 template<int w, int h>
-using Grid = std::array<std::array<bool, w>, h>;
+using Grid = std::array<std::array<Tile, w>, h>;
 
 struct Coord {
     int x = 0;
@@ -15,6 +34,16 @@ struct Coord {
     Coord(int x, int y) {
         this->x = x;
         this->y = y;
+    }
+
+    bool operator == (const Coord& b) const {
+        return this->x == b.x && this->y == b.y;
+    }
+
+    bool operator < (const Coord& b) const {
+        if (this->x < b.x) return true;
+        if (this->x > b.x) return false;
+        return this->y < b.y;
     }
 };
 
@@ -31,5 +60,7 @@ struct Dimensions {
         this->h = h;
     }
 };
+
+
 
 #endif // HELPERSTRUCTS_H

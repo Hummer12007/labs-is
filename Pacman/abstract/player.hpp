@@ -3,12 +3,11 @@
 #include "../utils/HelperStructs.h"
 
 class Player {
+    virtual Step findPath() = 0;
+    virtual Step findGreedy() = 0;
 
-    Player() {
-        position = Coord(0, 0);
-    }
-
-    virtual void findPath() = 0;
+public:
+    Player() = default;
     virtual void nextStep() = 0;
 
 private:

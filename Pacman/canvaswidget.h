@@ -26,6 +26,7 @@ private:
     QColor blank_color;
     QColor player_color;
     QColor ghost_color;
+    QColor padding_color;
 
     Dimensions cell_dimensions;
     Dimensions field_dimensions;

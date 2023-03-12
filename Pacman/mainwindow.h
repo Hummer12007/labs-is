@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTime>
+#include <QTimer>
 #include "canvaswidget.h"
 
 QT_BEGIN_NAMESPACE
@@ -16,8 +18,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void timerTick();
+
 private:
     Ui::MainWindow *ui;
+    QTimer* timer;
     Game* game;
     CanvasWidget *canvas_widget;
 };
