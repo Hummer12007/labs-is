@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Lab1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Lab1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-system-d" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Lab1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML/include" />
+		</Compiler>
+		<Linker>
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML/lib" />
+		</Linker>
+		<Unit filename="ConvertSketch.cpp" />
+		<Unit filename="DrawMap.cpp" />
+		<Unit filename="DrawText.cpp" />
+		<Unit filename="Ghost.cpp" />
+		<Unit filename="GhostManager.cpp" />
+		<Unit filename="Headers/ConvertSketch.hpp" />
+		<Unit filename="Headers/DrawMap.hpp" />
+		<Unit filename="Headers/DrawText.hpp" />
+		<Unit filename="Headers/Ghost.hpp" />
+		<Unit filename="Headers/GhostManager.hpp" />
+		<Unit filename="Headers/Global.hpp" />
+		<Unit filename="Headers/MapCollision.hpp" />
+		<Unit filename="Headers/Pacman.hpp" />
+		<Unit filename="MapCollision.cpp" />
+		<Unit filename="Pacman.cpp" />
+		<Unit filename="main.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
