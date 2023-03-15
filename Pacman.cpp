@@ -281,20 +281,30 @@ void Pacman::update(unsigned char i_level, std::array<std::array<Cell, MAP_HEIGH
 
                             if (dfs_map[next_dfs_position_x+1][next_dfs_position_y] != Cell::Visited
                                 && dfs_map[next_dfs_position_x+1][next_dfs_position_y] != Cell::Wall
-                                && next_dfs_position_x+1 <= MAP_WIDTH)
+                                && next_dfs_position_x+1 < MAP_WIDTH)
                             {
                                 next_dfs_position_x += 1;
+                                if (next_dfs_position_x >= MAP_WIDTH-1)
+                                {
+                                    dfs_map[next_dfs_position_x][next_dfs_position_y] = Cell::Visited;
+                                    next_dfs_position_x = 0;
+                                }
                             }
                             else if (dfs_map[next_dfs_position_x][next_dfs_position_y-1] != Cell::Visited
                                      && dfs_map[next_dfs_position_x][next_dfs_position_y-1] != Cell::Wall)
                             {
                                 next_dfs_position_y -= 1;
                             }
-                            else if (dfs_map[next_dfs_position_x-1][next_dfs_position_y] != Cell::Visited
-                                     && dfs_map[next_dfs_position_x-1][next_dfs_position_y] != Cell::Wall
-                                     && next_dfs_position_x-1 >= 0)
+                            else if (next_dfs_position_x-1 >= 0
+                                     && dfs_map[next_dfs_position_x-1][next_dfs_position_y] != Cell::Visited
+                                     && dfs_map[next_dfs_position_x-1][next_dfs_position_y] != Cell::Wall)
                             {
                                 next_dfs_position_x -= 1;
+                                if (next_dfs_position_x <= 0)
+                                {
+                                    dfs_map[next_dfs_position_x][next_dfs_position_y] = Cell::Visited;
+                                    next_dfs_position_x = MAP_WIDTH-1;
+                                }
                             }
                             else if (dfs_map[next_dfs_position_x][next_dfs_position_y+1] != Cell::Visited
                                      && dfs_map[next_dfs_position_x][next_dfs_position_y+1] != Cell::Wall
@@ -304,22 +314,11 @@ void Pacman::update(unsigned char i_level, std::array<std::array<Cell, MAP_HEIGH
                             }
                             else path_back = true;
 
-                            if (next_dfs_position_x >= MAP_WIDTH && dfs_map[next_dfs_position_x][next_dfs_position_y] != Cell::Visited)
-                            {
-                                dfs_map[next_dfs_position_x][next_dfs_position_y] = Cell::Visited;
-                                next_dfs_position_x = 0;
-                            }
-                            else if (next_dfs_position_x <= 0 && dfs_map[next_dfs_position_x][next_dfs_position_y] != Cell::Visited)
-                            {
-                                dfs_map[next_dfs_position_x][next_dfs_position_y] = Cell::Visited;
-                                next_dfs_position_x = MAP_WIDTH-1;
-                            }
-
                             if (dfs_map[next_dfs_position_x][next_dfs_position_y] == Cell::Pellet) current_amount_of_pellet++;
 
                             if (path_back)
                             {
-                                current_path.pop_back();
+                                if (current_path.size()>1) current_path.pop_back();
                                 next_dfs_position_x = current_path[current_path.size()-1][0];
                                 next_dfs_position_y = current_path[current_path.size()-1][1];
                                 path.push_back({next_dfs_position_x, next_dfs_position_y});
@@ -557,13 +556,13 @@ void Pacman::update(unsigned char i_level, std::array<std::array<Cell, MAP_HEIGH
 		}
 	}
 
-	if (-CELL_SIZE >= position.x)
+	if (0 >= position.x)
 	{
-		position.x = CELL_SIZE * MAP_WIDTH - PACMAN_SPEED;
+		position.x = CELL_SIZE * (MAP_WIDTH-1) - PACMAN_SPEED;
 	}
-	else if (CELL_SIZE * MAP_WIDTH <= position.x)
+	else if (CELL_SIZE * (MAP_WIDTH-1) <= position.x)
 	{
-		position.x = PACMAN_SPEED - CELL_SIZE;
+		position.x = PACMAN_SPEED;
 	}
 
 	if (1 == map_collision(1, 0, position.x, position.y, i_map))
