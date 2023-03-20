@@ -99,8 +99,8 @@ ascent! {
     brother_in_law(a, b) <-- couple(c, b), brother(a, c);
     sister_in_law(a, b) <-- couple(c, b), sister(a, c);
 
-    son_in_law(a, b) <-- child(c, a), couple(c, b), male(b);
-    daughter_in_law(a, b) <-- child(c, a), couple(c, b), female(b);
+    son_in_law(a, b) <-- child(c, b), couple(c, a), male(a);
+    daughter_in_law(a, b) <-- child(c, b), couple(c, a), female(a);
 }
 
 #[derive(Default)]
