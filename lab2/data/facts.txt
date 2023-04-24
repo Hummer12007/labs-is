@@ -1,0 +1,6 @@
+Child alice_child bob_father
+Siblings alice_child jim_child
+Wife carol_mother bob_father
+Child carol_mother bob_grandfather
+Siblings carol_mother sam_mother
+Child bob_father tina_grandmother
