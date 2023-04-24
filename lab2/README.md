@@ -4,10 +4,10 @@
 - `rule <pred1> & <pred2> & ... & <predn> -> <pred_rule>` -- створити правило, що якщо предикати `<pred1> ... <predn>` виконуються, то `pred_rule` теж виконується. Приклад:
 
 ```
-Child ?c1 ?p1 -> Parent ?p1 ?c1
+Parent ?p1 ?c1 & Married ?p1 ?p2 -> Child ?c1 ?p2
 ```
 
-(правило яке каже що якщо `c1` є сином `p1`, то `p1` є батьком `c1`).
+(правило яке каже що якщо `p1` є батьком `с1` і `p1` є одруженим з `p2`, то `c1` є сином `p2`).
 
 - `fact <pred>` -- додати факт, що предикат `<pred>` виконується. Приклад:
 
@@ -45,9 +45,9 @@ python3 ./main.py
 
 Для того щоб полегшити тестування на початку виконання програма зчитує початковий список фактів на правил з `data/facts.txt` та `data/rules.txt`. 
 
-## Приклад Застосування:
+## Приклад застосування:
 
-### Вивести список всіх дітей
+### 1. Вивести список всіх дітей
 
 ```
 query Child ?c1 ?p1
@@ -65,7 +65,7 @@ True: ?c1 : alice_child, ?p1 : carol_mother
 True: ?c1 : jim_child, ?p1 : carol_mother
 ```
 
-### Додати правило про племіника
+### 2. Додати правило про племіника
 
 ```
 rule Parent ?p1 ?c1 & Siblings ?p1 ?p2 -> Newphew ?p2 ?c1
@@ -79,9 +79,17 @@ True: ?p2 : sam_mother, ?c1 : alice_child
 True: ?p2 : sam_mother, ?c1 : jim_child
 ```
 
-### Додати факт про сина `sam_mother` та повторити запит про племіників
+### 3. Додати факт про сина `sam_mother` та повторити запит про племіників
 
 ```
 fact Child nick_child sam_mother
 query Newphew ?p2 ?c1
+```
+
+відповідь:
+
+```
+True: ?p2 : sam_mother, ?c1 : alice_child
+True: ?p2 : sam_mother, ?c1 : jim_child
+True: ?p2 : carol_mother, ?c1 : nick_child
 ```
