@@ -1,0 +1,10 @@
+AC,c,Monday1,Wednesday2,Thursday3
+IS,o,Monday2,Wednesday1
+TQC,c,Wednesday1,Thursday1
+SPP,o,Monday3
+ITM,o,Wednesday3
+LL,o,Wednesday3,Wednesday2,Tuesday2
+RP,o,Tuesday1,Tuesday2
+English,c,Monday1,Tuesday1,Tuesday2,Thursday2
+TT,c,Wednesday1,Wednesday2
+R1,R2,R3
