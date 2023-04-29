@@ -312,6 +312,12 @@ def ariadne(l):
         if b == False:
             l[p[m][0]][p[m][1]].remove(n)
 
+def printl(l):
+    s = [x[0] if len(x) == 1 else ' ' for i in range(9) for x in l[i]]
+    q = lambda x,y: x+y+x+y+x
+    r = lambda a,b,c,d,e: a+q(q(b*3,c),d)+e+"\n"
+    print(r(*"┏━┯┳┓")+q(q("┃ %s │ %s │ %s "*3+"┃\n",r(*"┠─┼╂┨")),r(*"┣━┿╋┫"))%(*s,)+r(*"┗━┷┻┛"))
+
 l, t = [], []
 for i in range(9):
     l.append(list(input()))
@@ -323,10 +329,13 @@ for i in range(9):
             t.append([i, j])
             l[i][j] = deepcopy([l[i][j]])
 
+print("Input:")
+printl(l)
+
 while not complete(l):
     solve(l)
     if not complete(l):
         ariadne(l)
 
-from pprint import pprint
-pprint(l)
+print("\nSolved:")
+printl(l)

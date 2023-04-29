@@ -53,6 +53,12 @@ def backtrack(s):
                     i, j = dec(i, j)
         i, j = inc(i, j)
 
+def printSudoku(l):
+    s = [str(x) if x != 0 else ' ' for i in range(9) for x in l[i]]
+    q = lambda x,y: x+y+x+y+x
+    r = lambda a,b,c,d,e: a+q(q(b*3,c),d)+e+"\n"
+    print(r(*"┏━┯┳┓")+q(q("┃ %s │ %s │ %s "*3+"┃\n",r(*"┠─┼╂┨")),r(*"┣━┿╋┫"))%(*s,)+r(*"┗━┷┻┛"))
+
 fixed = []
 sudoku = []
 
@@ -66,10 +72,11 @@ for i in range(9):
     row = [int(i) for i in row]
     sudoku.append(row)
 
+print('Input:')
+printSudoku(sudoku)
+
 sudoku = np.array(sudoku)
 backtrack(sudoku)
 
-for row in sudoku:
-    for i in row:
-        print(i, end=' ')
-    print()
+print('\nSolved:')
+printSudoku(sudoku)
