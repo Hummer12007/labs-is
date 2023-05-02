@@ -1,44 +1,93 @@
 import random
 
-def getFitness(candidate, target):
-   fitness = 0
-   for i in range(0, len(candidate)):
-       if target[i] == candidate[i]:
-           fitness += 1
-   return(fitness)
-
-def mutate(candidate):
-   geneIndex = random.randint(0, len(geneset) -1)
-   index = random.randint(0, len(candidate) - 1)
-   genes = list(candidate)
-   genes[index] = geneset[geneIndex]
-   return(''.join(genes))
-
-def generateParent(length):
-    genes = list("")
-    for i in range(0,length):
-        geneIndex = random.randint(0, len(geneset) -1)
-        genes.append(geneset[geneIndex])
-    return(''.join(genes))
-
-def display(candidate):
-    fitness = getFitness(candidate, target)
-    print ("%i\t%s" % (fitness, candidate))
-
-
+POPULATION_SIZE = 100
+  
 geneset = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!."
-target = 'Some random long text for lab genetic algorithm'
+target = 'Random text for lab'
+  
+class Individual(object):
+    def __init__(self, chromosome):
+        self.chromosome = chromosome 
+        self.fitness = self.cal_fitness()
+  
+    @classmethod
+    def mutated_genes(self):
+        global geneset
+        gene = random.choice(geneset)
+        return gene
+  
+    @classmethod
+    def create_gnome(self):
+        global target
+        gnome_len = len(target)
+        return [self.mutated_genes() for _ in range(gnome_len)]
+  
+    def mate(self, par2):
+        child_chromosome = []
+        for gp1, gp2 in zip(self.chromosome, par2.chromosome):    
+            prob = random.random()
+  
+            if prob < 0.45:
+                child_chromosome.append(gp1)
+            elif prob < 0.90:
+                child_chromosome.append(gp2)
+            else:
+                child_chromosome.append(self.mutated_genes())
 
-random.seed()
-bestParent = generateParent(len(target))
-bestFitness = getFitness(bestParent, target)
-display(bestParent)
+        return Individual(child_chromosome)
+  
+    def cal_fitness(self):
+        global target
+        fitness = 0
+        for gs, gt in zip(self.chromosome, target):
+            if gs == gt: fitness+= 1
+        return fitness
+  
+def main():
+    global POPULATION_SIZE
+  
+    generation = 1
+  
+    found = False
+    population = []
+  
+    for _ in range(POPULATION_SIZE):
+                gnome = Individual.create_gnome()
+                population.append(Individual(gnome))
+  
+    while not found:
+        population = sorted(population, key = lambda x:x.fitness, reverse=True)
 
-while bestFitness < len(bestParent):
-   child = mutate(bestParent)
-   childFitness = getFitness(child, target)
+        if population[0].fitness >= len(target):
+            found = True
+            break
+  
+        new_generation = []
 
-   if childFitness > bestFitness:
-      bestFitness = childFitness
-      bestParent = child
-      display(bestParent)
+        s = int((10*POPULATION_SIZE)/100)
+        new_generation.extend(population[:s])
+  
+        s = int((90*POPULATION_SIZE)/100)
+        for _ in range(s):
+            parent1 = random.choice(population[:50])
+            parent2 = random.choice(population[:50])
+            child = parent1.mate(parent2)
+            new_generation.append(child)
+  
+        population = new_generation
+  
+        print("Generation: {}\tString: {}\tFitness: {}".\
+              format(generation,
+              "".join(population[0].chromosome),
+              population[0].fitness))
+  
+        generation += 1
+  
+      
+    print("Generation: {}\tString: {}\tFitness: {}".\
+          format(generation,
+          "".join(population[0].chromosome),
+          population[0].fitness))
+  
+if __name__ == '__main__':
+    main()
