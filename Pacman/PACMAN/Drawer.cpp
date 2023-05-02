@@ -1,4 +1,5 @@
 #include "Drawer.h"
+#include <cassert>
 
 using namespace std;
 
@@ -47,7 +48,7 @@ void Drawer::setMaze(int mazeType)
 	}
 	else
 	{
-		_ASSERT(mazeType < 3);
+		assert(mazeType < 3);
 	}
 	_mazeType = mazeType;
 
@@ -56,7 +57,7 @@ void Drawer::setMaze(int mazeType)
 
 void Drawer::setPacman(int pacmanType)
 {
-	_ASSERT(pacmanType < 3);
+	assert(pacmanType < 3);
 
 	path.clear();
 	wrongCells.clear();

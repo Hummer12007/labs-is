@@ -1,1 +1,47 @@
-﻿  PACMAN.vcxproj -> C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\x64\Release\PACMAN.exe
+﻿  Drawer.cpp
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(104,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(104,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(105,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(105,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(138,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(138,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(202,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(202,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(207,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(207,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(217,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(217,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(222,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(222,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(227,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(227,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(281,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(281,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(282,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(282,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(283,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(283,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(284,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(284,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(285,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(285,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(286,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(286,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(287,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\Drawer.cpp(287,24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  MazeGenerator.cpp
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\MazeGenerator.cpp(203,75): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\MazeGenerator.cpp(214,75): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+  Generating code
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 863 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  PACMAN.vcxproj -> C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\x64\Release\PACMAN.exe

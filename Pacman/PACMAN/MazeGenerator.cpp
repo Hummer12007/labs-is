@@ -1,4 +1,6 @@
 #include "MazeGenerator.h"
+#include <cassert>
+
 
 vector <vector <int> > MazeGenerator::gen1(int n, int m)
 {
@@ -113,7 +115,7 @@ vector <vector <int> > MazeGenerator::gen1(int n, int m)
 
 		if (neibs.size() == 0)
 		{
-			_ASSERT(neibs.size() == 0);
+			assert(neibs.size() == 0);
 		}
 		else
 		{
