@@ -1,5 +1,5 @@
 {
-  "watch": ["./"],
-  "ext": "js",
-  "exec": "yarn run start"
+  "watch": ["."],
+  "ext": "mts",
+  "exec": "yarn run build && yarn run start || exit 1"
 }
