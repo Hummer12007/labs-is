@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\main.cpp(33,24): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\main.cpp(34,30): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\main.cpp(35,39): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\main.cpp(50,24): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\main.cpp(51,30): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\PACMAN\main.cpp(52,39): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  PACMAN.vcxproj -> C:\Users\oleksiit\Downloads\Pacman_lab-main\Pacman_lab-main\x64\Debug\PACMAN.exe
