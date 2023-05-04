@@ -1,0 +1,15 @@
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\bin\Debug\net6.0\KnowledgeBase.exe
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\bin\Debug\net6.0\KnowledgeBase.deps.json
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\bin\Debug\net6.0\KnowledgeBase.runtimeconfig.json
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\bin\Debug\net6.0\KnowledgeBase.dll
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\bin\Debug\net6.0\KnowledgeBase.pdb
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.csproj.AssemblyReference.cache
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.AssemblyInfoInputs.cache
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.AssemblyInfo.cs
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.csproj.CoreCompileInputs.cache
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.dll
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\refint\KnowledgeBase.dll
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.pdb
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\KnowledgeBase.genruntimeconfig.cache
+C:\Users\Xiaomi\Desktop\Uni\IC\Knowledge base\KnowledgeBase\KnowledgeBase\obj\Debug\net6.0\ref\KnowledgeBase.dll
