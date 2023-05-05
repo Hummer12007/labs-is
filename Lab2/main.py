@@ -1,0 +1,77 @@
+from pyDatalog import pyDatalog
+
+pyDatalog.create_terms('gpu', 'X', 'Answer', 'GPU')
+pyDatalog.create_terms('radeonprov340', 'radeonrx7900xtx', 'rage128pro', 'h100', 'rivatnt2', 'arca770', 'voodoorush')
+pyDatalog.create_atoms('name', 'vendor', 'specialization', 'released', 'memory_size', 'memory_type', 'transistor_count')
+
++ (name[radeonprov340] == 'RadeonProV340')
++ (vendor[radeonprov340] == 'AMD')
++ (specialization[radeonprov340] == 'Server')
++ (released[radeonprov340] == 2018)
++ (memory_size[radeonprov340] == 32768)
++ (memory_type[radeonprov340] == 'HBM2')
++ (transistor_count[radeonprov340] == 12500)
+
++ (name[radeonrx7900xtx] == 'RadeonRX7900XTX')
++ (vendor[radeonrx7900xtx] == 'AMD')
++ (specialization[radeonrx7900xtx] == 'Desktop')
++ (released[radeonrx7900xtx] == 2022)
++ (memory_size[radeonrx7900xtx] == 24576)
++ (memory_type[radeonrx7900xtx] == 'GDDR6')
++ (transistor_count[radeonrx7900xtx] == 58000)
+
++ (name[rage128pro] == 'Rage128Pro')
++ (vendor[rage128pro] == 'ATI')
++ (specialization[rage128pro] == 'Desktop')
++ (released[rage128pro] == 1999)
++ (memory_size[rage128pro] == 32)
++ (memory_type[rage128pro] == 'SDR')
++ (transistor_count[rage128pro] == 8)
+
++ (name[h100] == 'H100')
++ (vendor[h100] == 'Nvidia')
++ (specialization[h100] == 'Supercomputing')
++ (released[h100] == 2022)
++ (memory_size[h100] == 81920)
++ (memory_type[h100] == 'HBM3')
++ (transistor_count[h100] == 80000)
+
++ (name[rivatnt2] == 'RivaTNT2')
++ (vendor[rivatnt2] == 'Nvidia')
++ (specialization[rivatnt2] == 'Desktop')
++ (released[rivatnt2] == 1999)
++ (memory_size[rivatnt2] == 32)
++ (memory_type[rivatnt2] == 'SDR')
++ (transistor_count[rivatnt2] == 15)
+
++ (name[arca770] == 'ArcA770')
++ (vendor[arca770] == 'Intel')
++ (specialization[arca770] == 'Desktop')
++ (released[arca770] == 2022)
++ (memory_size[arca770] == 16384)
++ (memory_type[arca770] == 'GDDR6')
++ (transistor_count[arca770] == 21700)
+
++ (name[voodoorush] == 'VoodooRush')
++ (vendor[voodoorush] == '3dfx')
++ (specialization[voodoorush] == 'Desktop')
++ (released[voodoorush] == 1997)
++ (memory_size[voodoorush] == 4)
++ (memory_type[voodoorush] == 'EDO')
++ (transistor_count[voodoorush] == 1)
+
+gpu('RadeonProV340') <= vendor('AMD') & released(radeonprov340) & specialization('Server')
+gpu('RadeonRX7900XTX') <= vendor('AMD') & released(radeonrx7900xtx) & specialization('Desktop')
+gpu('H100') <= vendor('Nvidia') & released(h100) & specialization('Supercomputing')
+gpu('RivaTNT2') <= vendor('Nvidia') & released(rivatnt2) & specialization('Desktop')
+gpu('Rage128Pro') <= vendor('ATI') & released(rage128pro)
+gpu('VoodooRush') <= vendor('3dfx') & released(voodoorush)
+gpu('ArcA770') <= vendor('Intel') & released(arca770)
+
+released(X) <= (released[X] >= int(input('Введіть мінімальний рік випуску: ')))
+
+vendor(Answer) <= (Answer == input('\nЯкий вендор?\n-AMD\n-ATI\n-Nvidia\n-Intel\n-3dfx\n'))
+
+specialization(Answer) <= (Answer == input('\nЯке призначення?\n-Desktop\n-Server\n-Supercomputing\n'))
+
+print(gpu(GPU))
